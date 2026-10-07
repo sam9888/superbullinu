@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Super Bull Inu | Forged in Gold</title>
+  <meta name="description" content="Super Bull Inu — a tiny bull, a giant sword, and absolutely zero exit plan. On Solana." />
+  <meta property="og:title" content="Super Bull Inu | Forged in Gold" />
+  <meta property="og:description" content="Small bull. Big sword. Horns up, paper hands down." />
+  <meta property="og:image" content="assets/banner.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@superbullinu" />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="embers" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a href="#hero" class="brand">
+      <img src="assets/logo.jpg" alt="Super Bull Inu" />
+      <span>Super Bull Inu</span>
+    </a>
+    <nav class="links">
+      <a href="#about">Lore</a>
+      <a href="#howtobuy">Buy</a>
+      <a href="#chart">Chart</a>
+      <a class="pill" data-link="x" href="#" target="_blank" rel="noopener">𝕏 Follow</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <p class="tag">🚨 Breaking: baby bull obtains sword 🚨</p>
+      <h1>
+        <span class="w1">Super</span>
+        <span class="w2">Bull</span>
+        <span class="w3">Inu</span>
+      </h1>
+
+      <div class="hero-stage">
+        <div class="bubble left">Not a dog.</div>
+        <button class="portrait" id="mooBtn" aria-label="Pet the bull">
+          <img src="assets/logo.jpg" alt="Baby black bull in golden armor holding a giant sword" />
+        </button>
+        <div class="bubble right">Not a cow.<br /><b>A PROBLEM.</b></div>
+        <span class="pet-hint">👆 boop the bull</span>
+      </div>
+
+      <p class="lede">
+        Small calf. Big sword. Zero chill. <b data-text="ticker">$SUPERBULL</b> is the bull inu with
+        a borrowed sword and absolutely no exit plan.
+      </p>
+
+      <div class="ctas">
+        <a class="btn yellow" data-link="buy" href="#" target="_blank" rel="noopener">🐂 Buy now</a>
+        <a class="btn blue" data-link="dex" href="#" target="_blank" rel="noopener">📈 Chart</a>
+        <a class="btn white" data-link="x" href="#" target="_blank" rel="noopener">𝕏 Twitter</a>
+      </div>
+
+      <div class="ca">
+        <span class="ca-label">CA</span>
+        <code id="caText" data-text="ca">coming soon… bull is still in the barn</code>
+        <button id="copyCa" class="copy">Copy</button>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>MOO&#8209;N SOON</span><i>🐂</i><span>BEARS NOT WELCOME</span><i>⚔️</i><span>HORNS UP</span><i>🪙</i><span>PAPER HANDS DOWN</span><i>🐂</i><span>FORGED IN GOLD</span><i>⚔️</i>
+        <span>MOO&#8209;N SOON</span><i>🐂</i><span>BEARS NOT WELCOME</span><i>⚔️</i><span>HORNS UP</span><i>🪙</i><span>PAPER HANDS DOWN</span><i>🐂</i><span>FORGED IN GOLD</span><i>⚔️</i>
+      </div>
+    </div>
+
+    <!-- LORE -->
+    <section id="about" class="section">
+      <h2><span class="hl">The lore</span> (very serious)</h2>
+
+      <div class="lore-grid">
+        <div class="panel story">
+          <span class="panel-num">CH. 1</span>
+          <p>
+            Born in a field. Raised by shibas. Armed by a blacksmith who asked <b>zero questions</b>.
+          </p>
+          <p>
+            One night he scrolled crypto Twitter a little too long and decided to bring a sword to a dog fight.
+          </p>
+          <p>
+            The armor is three sizes too big. The sword is technically borrowed. The conviction?
+            <b>100% pure gold.</b> Local bears have been seen packing their bags.
+          </p>
+        </div>
+        <div class="panel banner">
+          <img src="assets/banner.jpg" alt="Super Bull Inu — Forged in Gold" />
+          <span class="caption">Actual footage of him 5 minutes after launch</span>
+        </div>
+      </div>
+
+      <div class="stickers">
+        <article class="sticker s1">
+          <div class="emoji">🥛</div>
+          <h3>Milk diet, bear dessert</h3>
+          <p>Still drinks milk twice a day. Snacks on bears in between. Growing boy.</p>
+        </article>
+        <article class="sticker s2">
+          <div class="emoji">🛡️</div>
+          <h3>Armor from Temu</h3>
+          <p>Ordered online, three sizes too big, took six weeks to arrive. Still the shiniest knight in the field.</p>
+        </article>
+        <article class="sticker s3">
+          <div class="emoji">🚀</div>
+          <h3>Only charges up</h3>
+          <p>Bulls don't do sideways. Horns first, full send, brakes were never installed.</p>
+        </article>
+      </div>
+
+      <div class="facts">
+        <div><small>Chain</small><b>Solana</b></div>
+        <div><small>Ticker</small><b data-text="ticker">$SUPERBULL</b></div>
+        <div><small>Tax</small><b>0 / 0</b></div>
+        <div><small>Bears</small><b>Banned</b></div>
+      </div>
+    </section>
+
+    <!-- HOW TO BUY -->
+    <section id="howtobuy" class="section">
+      <h2><span class="hl red">How to buy</span> in 4 moos</h2>
+      <p class="sub">From broke peasant to golden knight. Even a calf can do it.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="num">1</span>
+          <h3>Get a wallet 👛</h3>
+          <p>Install Phantom. Hide your seed phrase better than the farmer hides the good hay.</p>
+        </li>
+        <li class="step">
+          <span class="num">2</span>
+          <h3>Feed it SOL 🪙</h3>
+          <p>Send SOL to your wallet. Keep a little for gas. The bull doesn't do charity.</p>
+        </li>
+        <li class="step">
+          <span class="num">3</span>
+          <h3>Grab the horns 🐂</h3>
+          <p>Open pump.fun, paste the CA, buy <b data-text="ticker">$SUPERBULL</b>.</p>
+          <a class="mini" data-link="buy" href="#" target="_blank" rel="noopener">Open pump.fun →</a>
+        </li>
+        <li class="step">
+          <span class="num">4</span>
+          <h3>Stampede 🏃</h3>
+          <p>Refuse to sell. Tell everyone at dinner. Especially the bears.</p>
+          <a class="mini" data-link="dex" href="#" target="_blank" rel="noopener">Open DexScreener →</a>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CHART -->
+    <section id="chart" class="section">
+      <h2><span class="hl blue">Number go up</span> zone</h2>
+      <p class="sub">Live from the pasture. Please do not lick the screen.</p>
+
+      <div class="chart-frame">
+        <div class="chart-head">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span><span data-text="ticker">$SUPERBULL</span> / SOL</span>
+          <a data-link="dex" href="#" target="_blank" rel="noopener">DexScreener ↗</a>
+        </div>
+        <div id="chartBody" class="chart-body">
+          <div class="chart-empty">
+            <img src="assets/logo.jpg" alt="" />
+            <p>Chart loads when the bull leaves the barn.</p>
+            <small>(he's sharpening the sword, give him a sec)</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section id="join" class="section join">
+      <div class="join-card">
+        <img class="join-bull" src="assets/logo.jpg" alt="" />
+        <h2>Join the herd</h2>
+        <p class="sub">The horns are polished. The bears are nervous. You're late.</p>
+        <div class="ctas">
+          <a class="btn yellow" data-link="x" href="#" target="_blank" rel="noopener">𝕏 @superbullinu</a>
+          <a class="btn white" data-link="buy" href="#" target="_blank" rel="noopener">🐂 Buy $SUPERBULL</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><b>Super Bull Inu</b> · Forged in Gold · 2026</p>
+    <p class="disclaimer">
+      <span data-text="ticker">$SUPERBULL</span> is a meme coin with no intrinsic value or expectation of financial return.
+      The bull is not a financial advisor. He's a calf. With a sword.
+    </p>
+  </footer>
+
+  <div id="mooLayer" aria-hidden="true"></div>
+  <div id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
