@@ -52,10 +52,64 @@ document.getElementById("copyCa").addEventListener("click", async () => {
   }
 });
 
+// ---------- moo sound (synthesized, no file needed) ----------
+let audioCtx;
+function playMoo() {
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === "suspended") audioCtx.resume();
+    const t = audioCtx.currentTime;
+    const len = 0.9 + Math.random() * 0.5;
+    const base = 95 + Math.random() * 40; // random pitch so every boop sounds different
+
+    // throat buzz: two slightly detuned saws
+    const out = audioCtx.createGain();
+    const oscs = [0, 6].map((detune) => {
+      const o = audioCtx.createOscillator();
+      o.type = "sawtooth";
+      o.detune.value = detune;
+      o.frequency.setValueAtTime(base * 0.8, t);
+      o.frequency.linearRampToValueAtTime(base * 1.25, t + len * 0.3);
+      o.frequency.linearRampToValueAtTime(base * 1.1, t + len * 0.7);
+      o.frequency.linearRampToValueAtTime(base * 0.7, t + len);
+      o.connect(out);
+      return o;
+    });
+
+    // wobbly vibrato
+    const lfo = audioCtx.createOscillator();
+    const lfoGain = audioCtx.createGain();
+    lfo.frequency.value = 5.5;
+    lfoGain.gain.value = 4;
+    lfo.connect(lfoGain);
+    oscs.forEach((o) => lfoGain.connect(o.frequency));
+
+    // "mmm" -> "OOO" -> "ooo" mouth shape
+    const mouth = audioCtx.createBiquadFilter();
+    mouth.type = "lowpass";
+    mouth.Q.value = 8;
+    mouth.frequency.setValueAtTime(250, t);
+    mouth.frequency.exponentialRampToValueAtTime(900, t + len * 0.35);
+    mouth.frequency.exponentialRampToValueAtTime(350, t + len);
+
+    const vol = audioCtx.createGain();
+    vol.gain.setValueAtTime(0.0001, t);
+    vol.gain.exponentialRampToValueAtTime(0.5, t + 0.12);
+    vol.gain.setValueAtTime(0.5, t + len * 0.7);
+    vol.gain.exponentialRampToValueAtTime(0.0001, t + len);
+
+    out.connect(mouth).connect(vol).connect(audioCtx.destination);
+    [...oscs, lfo].forEach((o) => { o.start(t); o.stop(t + len + 0.05); });
+  } catch {
+    /* no audio support — the bull moos silently */
+  }
+}
+
 // ---------- pet the bull: MOO! ----------
 const moos = ["MOO!", "MOOO!", "MOO-N!", "⚔️ MOO ⚔️", "HODL MOO", "*angry moo*", "MOOOOON", "no bears.", "BULLISH"];
 const layer = document.getElementById("mooLayer");
 document.getElementById("mooBtn").addEventListener("click", (e) => {
+  playMoo();
   const btn = e.currentTarget;
   btn.classList.remove("bonk");
   void btn.offsetWidth;
