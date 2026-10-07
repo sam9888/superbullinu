@@ -2,7 +2,7 @@
 //  EDIT HERE — paste the contract address once you launch.
 // ============================================================
 const CONFIG = {
-  ca: "",                              // e.g. "AbC...pump"
+  ca: "FFjoTJjG8F7YW11srZteXYH8q7CcEvcTkh4ci4ubpump",
   ticker: "$SUPERBULL",
   x: "https://x.com/superbullinu",
 };
